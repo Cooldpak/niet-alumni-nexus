@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/niet_nexus_db?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root123</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">10</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Do not auto-update schema, rely on schema.sql -->
+        <property name="hbm2ddl.auto">none</property>
+
+        <!-- Mapping classes -->
+        <mapping class="com.niet.nexus.models.User"/>
+        <mapping class="com.niet.nexus.models.Profile"/>
+        <mapping class="com.niet.nexus.models.Connection"/>
+        <mapping class="com.niet.nexus.models.JobPost"/>
+        <mapping class="com.niet.nexus.models.Message"/>
+        <mapping class="com.niet.nexus.models.Resource"/>
+    </session-factory>
+</hibernate-configuration>
